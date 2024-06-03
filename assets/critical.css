@@ -76,7 +76,6 @@ html:not(.template-password) main#MainContent {
   flex-direction: row !important;
 }
 .center-center {
-  /* align-items: center; */
   justify-content: center;
 }
 .space-between {
@@ -716,7 +715,6 @@ header .header-content {
   gap: var(--gap);
   height: 80px;
   overflow:hidden;
-  /* padding: var(--padding-vertical) var(--padding-horizontal); */
 }
 html:not(.sticky-header-show) header.header.overlay.use-background { 
   color: var(--color-background);
@@ -772,8 +770,6 @@ html:not(.sticky-header-show) .header-logo.--alt-on-overlay .site-logo.--alt {
 }
 
 .header-item__link {
-  /* --padding: 24px;
-  padding: calc(var(--padding) / 2); */
   display: grid;
   place-content: center;
   cursor: pointer;
@@ -1175,7 +1171,6 @@ header.header[data-use-icons="true"] .header-item__link.has-blip-visible .header
   font-weight: var(--font-body-weight);
   text-transform: var(--font-body-text-transform);
   letter-spacing: var(--font-body-letter-spacing);
-  /*font-size: 1.6rem;*/
 }
 .rte--wide {
   max-width: 100ch;
@@ -1682,11 +1677,6 @@ input[type='checkbox']:not(.swatch) {
   text-decoration: line-through;
   margin-right: 12px;
 }
-
-/* Icons */
-/* svg.feather {
-  stroke-width: var(--icon-stroke);
-} */
 
 
 /* Banner hovers */
