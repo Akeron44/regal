@@ -5,21 +5,37 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-
+    <!-- AKERON ADDED NEW GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     {%- comment -%} Title {% endcomment %}
     <title>
       {{- page_title -}}
-      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
-      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+      {%- if current_tags %}
+        &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+      {%- if current_page != 1 %}
+        &ndash; Page {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %}
+        &ndash; {{ shop.name }}{% endunless -%}
     </title>
 
     {%- comment -%} Preconnect links below here {% endcomment %}
-    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
-    {% unless settings.type_header_font.system? and settings.base_font.system? -%}
-      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-    {% endunless -%}
+    <link
+      rel="preconnect"
+      href="https://cdn.shopify.com"
+      crossorigin>
 
+    {% unless settings.type_header_font.system? and settings.base_font.system? -%}
+      <link
+        rel="preconnect"
+        href="https://fonts.shopifycdn.com"
+        crossorigin>
+    {% endunless -%}
+    {{ 'custom.css' | asset_url | stylesheet_tag: preload: true }}
     {%- comment -%} Asynchronous JS below here {%- endcomment -%}
 
     {%- comment -%} CSS that includes @import below here {%- endcomment -%}
@@ -30,7 +46,7 @@
     {{ 'accessibility.css' | asset_url | stylesheet_tag: preload: true }}
     {{ 'reset.css' | asset_url | stylesheet_tag: preload: true }}
     {{ 'critical.css' | asset_url | stylesheet_tag: preload: true }}
-    {% if template.name == 'product' -%}
+      {% if template.name == 'product' -%}
       {{ 'template-product.css' | asset_url | stylesheet_tag: preload: true }}
     {% elsif template.name == 'collection' or template.name == 'search' -%}
       {{ 'component-product-grid.css' | asset_url | stylesheet_tag: preload: true }}
@@ -41,64 +57,122 @@
     {% if settings.product_card_show_rating -%}
       {{ 'component-rating.css' | asset_url | stylesheet_tag: preload: true }}
     {% endif -%}
-    
+
     {%- comment -%} Preload links below here {% endcomment %}
     {% # theme-check-disable %}
     {% unless settings.base_font.system? -%}
-      <link rel="preload" as="font" fetchpriority="high" href="{{ settings.base_font | font_url }}" type="font/woff2" crossorigin>
+      <link
+        rel="preload"
+        as="font"
+        fetchpriority="high"
+        href="{{ settings.base_font | font_url }}"
+        type="font/woff2"
+        crossorigin>
     {% endunless -%}
     {% unless settings.header_font.system? -%}
-      <link rel="preload" as="font" fetchpriority="high" href="{{ settings.header_font | font_url }}" type="font/woff2" crossorigin>
+      <link
+        rel="preload"
+        as="font"
+        fetchpriority="high"
+        href="{{ settings.header_font | font_url }}"
+        type="font/woff2"
+        crossorigin>
     {% endunless -%}
     {% if settings.css_animations -%}
-      <link rel="preload" as="style" fetchpriority="low" href="{{ 'animations.css' | asset_url }}" onload="this.rel='stylesheet'">
+      <link
+        rel="preload"
+        as="style"
+        fetchpriority="low"
+        href="{{ 'animations.css' | asset_url }}"
+        onload="this.rel='stylesheet'">
     {% endif -%}
 
     {% if settings.product_card_quick_buy -%}
-      <link rel="stylesheet" fetchpriority="low" media="print" href="{{ 'component-modals.css' | asset_url }}" onload="this.media='all'">
+      <link
+        rel="stylesheet"
+        fetchpriority="low"
+        media="print"
+        href="{{ 'component-modals.css' | asset_url }}"
+        onload="this.media='all'">
     {% endif -%}
     {% if settings.product_card_quick_buy or template.name == 'product' -%}
       {%- if template.name == 'product' -%}
-        <link rel="preload" as="style" fetchpriority="low" href="{{ 'component-product-form.css' | asset_url }}" onload="this.rel='stylesheet'">
-        {%- else -%}
-        <link rel="stylesheet" fetchpriority="low" media="print" href="{{ 'component-product-form.css' | asset_url }}" onload="this.media='all'">
+        <link
+          rel="preload"
+          as="style"
+          fetchpriority="low"
+          href="{{ 'component-product-form.css' | asset_url }}"
+          onload="this.rel='stylesheet'">
+      {%- else -%}
+        <link
+          rel="stylesheet"
+          fetchpriority="low"
+          media="print"
+          href="{{ 'component-product-form.css' | asset_url }}"
+          onload="this.media='all'">
       {%- endif -%}
     {% endif %}
     {% if template.name == 'product' and product.featured_image != empty -%}
-      <link rel="preload" as="image" href="{{ product.featured_image | image_url: width: 800 }}" media="(min-width: 768px)">
+      <link
+        rel="preload"
+        as="image"
+        href="{{ product.featured_image | image_url: width: 800 }}"
+        media="(min-width: 768px)">
     {% endif %}
     {% if template.name != 'cart' -%}
-      <link rel="stylesheet" href="{{ 'component-cart.css' | asset_url }}" media="print" onload="this.media='all'">
+      <link
+        rel="stylesheet"
+        href="{{ 'component-cart.css' | asset_url }}"
+        media="print"
+        onload="this.media='all'">
     {% endif %}
     {% # theme-check-enable %}
     <noscript>
-    {% if settings.css_animations -%}
-      {{ 'animations.css' | asset_url | stylesheet_tag }}
-    {% endif -%}
-    {% if settings.product_card_quick_buy -%}
-      {{ 'component-modals.css' | asset_url | stylesheet_tag }}
-    {% endif -%}
-    {% if settings.product_card_quick_buy or template.name == 'product' -%}
-     {{ 'component-product-form.css' | asset_url | stylesheet_tag }}
-    {% endif -%}
-    {% if template.name != 'cart' -%}
-      {{ 'component-cart.css' | asset_url | stylesheet_tag }}
-    {% endif -%}
+      {% if settings.css_animations -%}
+        {{ 'animations.css' | asset_url | stylesheet_tag }}
+      {% endif -%}
+      {% if settings.product_card_quick_buy -%}
+        {{ 'component-modals.css' | asset_url | stylesheet_tag }}
+      {% endif -%}
+      {% if settings.product_card_quick_buy or template.name == 'product' -%}
+        {{ 'component-product-form.css' | asset_url | stylesheet_tag }}
+      {% endif -%}
+      {% if template.name != 'cart' -%}
+        {{ 'component-cart.css' | asset_url | stylesheet_tag }}
+      {% endif -%}
     </noscript>
 
     {% comment -%} Deferred JS below here. Content for header after. {% endcomment %}
-    <script type="text/javascript" src="{{ 'global.js' | asset_url }}" defer></script>
-    <script type="text/javascript" data-loading="lazy" data-src="{{ 'component-predictive-search.js' | asset_url }}"></script>
+    <script
+      type="text/javascript"
+      src="{{ 'global.js' | asset_url }}"
+      defer></script>
+    <script
+      type="text/javascript"
+      data-loading="lazy"
+      data-src="{{ 'component-predictive-search.js' | asset_url }}"></script>
     {% if settings.product_card_quick_buy -%}
-      <script type="text/javascript" data-loading="lazy" data-src="{{ 'component-quick-buy.js' | asset_url }}"></script>
+      <script
+        type="text/javascript"
+        data-loading="lazy"
+        data-src="{{ 'component-quick-buy.js' | asset_url }}"></script>
     {% endif -%}
     {% if template.name == 'product' -%}
-      <script type="text/javascript" src="{{ 'component-product-form.js' | asset_url }}" defer></script>
+      <script
+        type="text/javascript"
+        src="{{ 'component-product-form.js' | asset_url }}"
+        defer></script>
     {% elsif settings.product_card_quick_buy -%}
-      <script type="text/javascript" data-loading="lazy" data-src="{{ 'component-product-form.js' | asset_url }}"></script>
+      <script
+        type="text/javascript"
+        data-loading="lazy"
+        data-src="{{ 'component-product-form.js' | asset_url }}"></script>
     {% endif -%}
-    <script type="text/javascript" src="{{ 'component-animations.js' | asset_url }}" defer></script>
-    
+    <script
+      type="text/javascript"
+      src="{{ 'component-animations.js' | asset_url }}"
+      defer></script>
+
     {{ content_for_header }}
 
     {%- comment -%} Everything else, e.g. SEO metas etc. below here {% endcomment %}
@@ -106,7 +180,7 @@
       <meta name="description" content="{{ page_description | escape }}">
     {% endif -%}
     <link rel="canonical" href="{{ canonical_url }}">
-    
+
     {%- render 'meta-tags' %}
 
     <script>
@@ -115,7 +189,10 @@
 
     <meta name="theme-color" content="">
     {% if settings.favicon != blank -%}
-      <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 32, height: 32 }}" type="image/png" />
+      <link
+        rel="shortcut icon"
+        href="{{ settings.favicon | image_url: width: 32, height: 32 }}"
+        type="image/png" />
     {% endif -%}
     {% if settings.head_custom_liquid != blank -%}
       {{ settings.head_custom_liquid }}
@@ -129,7 +206,10 @@
 
     {%- sections 'header-group' -%}
 
-    <main id="MainContent" role="main" tabindex="-1">
+    <main
+      id="MainContent"
+      role="main"
+      tabindex="-1">
       {{ content_for_layout }}
     </main>
 
@@ -154,14 +234,14 @@
         cart_update_url: '{{ routes.cart_update_url }}',
         search_url: '{{ routes.search_url }}',
         predictive_search_url: '{{ routes.predictive_search_url }}',
-        product_recommendations_url: '{{ routes.product_recommendations_url }}',
+        product_recommendations_url: '{{ routes.product_recommendations_url }}'
       };
 
       window.cartStrings = {
         error: `{{ 'sections.cart.cart_error' | t }}`,
         quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`,
         shipping_free: `{{ 'sections.cart.shipping_free' | t }}`,
-        shipping_not_free: `{{ 'sections.cart.shipping_not_free' | t: amount: '[amount]' }}`,
+        shipping_not_free: `{{ 'sections.cart.shipping_not_free' | t: amount: '[amount]' }}`
       };
 
       window.variantStrings = {
@@ -180,41 +260,52 @@
           will_be_in_stock_after: `{{ 'products.product.inventory.will_be_in_stock_after' | t: date: '[date]' }}`,
           waiting_for_stock: `{{ 'products.product.inventory.waiting_for_stock' | t }}`,
           out_of_stock: `{{ 'products.product.inventory.out_of_stock' | t }}`,
-          out_of_stock_continue_selling: `{{ 'products.product.inventory.out_of_stock_continue_selling' | t }}`,
-        },
+          out_of_stock_continue_selling: `{{ 'products.product.inventory.out_of_stock_continue_selling' | t }}`
+        }
       };
 
       window.accessibilityStrings = {
         imageAvailable: `{{ 'products.product.media.image_available' | t: index: '[index]' }}`,
         shareSuccess: `{{ 'general.share.success_message' | t }}`,
         pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,
-        playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
+        playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`
       };
 
       window.themeStrings = {
         product_count_simple_one: `{{ 'products.facets.product_count_simple.one' | t: count: '[count]' }}`,
         product_count_simple_other: `{{ 'products.facets.product_count_simple.other' | t: count: '[count]' }}`,
         results_with_count_one: `{{ 'templates.search.results_with_count.one' | t: count: '[count]' }}`,
-        results_with_count_other: `{{ 'templates.search.results_with_count.other' | t: count: '[count]' }}`,
+        results_with_count_other: `{{ 'templates.search.results_with_count.other' | t: count: '[count]' }}`
       };
 
       theme = {};
       theme.settings = {
-        moneyFormat: {{ shop.money_format | json }},
+        moneyFormat: {{ shop.money_format | json }}
       };
 
       theme.assets = {};
     </script>
 
-    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="0"
+      height="0">
       <defs>
         <clipPath id="circle-substract">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M24 15.373C18.7775 13.6859 15 8.78408 15 3C15 1.96746 15.1204 0.963039 15.3479 0L0 0V24H24V15.373Z" fill="black"/>
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M24 15.373C18.7775 13.6859 15 8.78408 15 3C15 1.96746 15.1204 0.963039 15.3479 0L0 0V24H24V15.373Z"
+            fill="black" />
         </clipPath>
       </defs>
     </svg>
 
-    <script type="text/javascript" fetchpriority="low" src="{{ 'script-loader.js' | asset_url }}" defer></script>
+    <script
+      type="text/javascript"
+      fetchpriority="low"
+      src="{{ 'script-loader.js' | asset_url }}"
+      defer></script>
 
     {%- if settings.body_custom_liquid != blank -%}
       {{ settings.body_custom_liquid }}
