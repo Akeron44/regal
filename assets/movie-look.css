@@ -163,13 +163,13 @@
     }
   }
   
-  @media (min-width: 790px) and (max-width: 1920px) {
+  @media (min-width: 768px) {
     .movie-container > * {
       gap: 7rem;
     }
   }
   
-  @media (max-width: 719px) {
+  @media (max-width: 768px) {
     .card-layout {
       width: 100%;
     }
