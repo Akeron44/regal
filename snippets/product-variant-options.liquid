@@ -1,0 +1,125 @@
+{%- liquid
+
+  # ** PARAMETERS **
+  # option          =>  REQUIRED | option object
+  # product_form_id =>  REQUIRED | string | used to mach labels and inputs correctly
+  # picker_type     =>  OPTIONAL | string: 'button', 'dropdown' | default: 'dropdown'
+
+  assign variants_available_arr = product.variants | map: 'available'
+  assign variants_option1_arr = product.variants | map: 'option1'
+  assign variants_option2_arr = product.variants | map: 'option2'
+  assign variants_option3_arr = product.variants | map: 'option3'
+  
+  assign picker_type = picker_type | default: 'dropdown'
+
+  assign option_downcase_name = option.name | downcase
+  assign color_str = 'products.product.color_swatch_identifiers' | t | downcase
+
+  if color_str contains option_downcase_name
+    assign color_swatches = true
+  else
+    assign color_swatches = false
+  endif
+-%}
+
+{%- for value in option.values -%}
+  {%- liquid
+    assign option_disabled = true
+    for option1_name in variants_option1_arr
+
+      case option.position
+        when 1
+          if variants_option1_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+            assign option_disabled = false
+          endif
+        when 2
+          if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+            assign option_disabled = false
+          endif
+        when 3
+          if option1_name == product.selected_or_first_available_variant.option1 and variants_option2_arr[forloop.index0] == product.selected_or_first_available_variant.option2 and variants_option3_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
+            assign option_disabled = false
+          endif
+      endcase
+    endfor
+  -%}
+
+  {%- if picker_type == 'button' -%}
+    {%- liquid
+      if color_swatches
+        assign downcased_color = value | handleize
+
+         comment
+          Downcase PNG attempt
+        endcomment
+        assign url = value | handleize | append: '.png'
+        assign file_url = images[url]
+
+        comment
+          Downcase JPG attempt
+        endcomment
+        if file_url == blank
+          assign url = value | handleize | append: '.jpg'
+          assign file_url = images[url]
+        endif
+
+        if file_url == blank
+          assign file_url = false
+        else
+          assign file_url = url | file_img_url: '32x32'
+        endif
+      endif
+    -%}
+
+    <input
+      type='radio'
+      id='{{ product_form_id }}-{{ option.position }}-{{ forloop.index0 }}'
+      name='{{ option.name }}'
+      value='{{ value | escape }}'
+      form='{{ product_form_id }}'
+      {% if option.selected_value == value %}
+        checked
+      {% endif %}
+      {% if option_disabled %}
+        class="disabled"
+      {% endif %}
+    >
+    <label
+      for='{{ product_form_id }}-{{ option.position }}-{{ forloop.index0 }}'
+      {% if color_swatches %}
+        style='--color: {{ downcased_color }};'
+      {% endif %}
+      class='{% if color_swatches %}swatch {% endif %}{% if file_url %}has-image{% endif %}'>
+      {%- unless color_swatches -%}
+        {{- value -}}
+      {%- else -%}
+
+        {%- if file_url -%}
+          {% # theme-check-disable %}
+          <img src='{{ file_url }}' alt='{{ value }}' class="color" width='16' height='16' loading='lazy' decoding='async'>
+          {% # theme-check-enable %}
+        {%- else -%}
+          <span class="color"></span>
+        {%- endif -%}
+
+        <span class='visually-hidden'>
+          {{- value -}}
+        </span>
+      {%- endunless -%}
+    </label>
+
+  {%- elsif picker_type == 'dropdown' -%}
+    <option
+      value="{{ value | escape }}"
+      {% if option.selected_value == value %}
+        selected="selected"
+      {% endif %}
+    >
+      {% if option_disabled -%}
+        {{- 'products.product.value_unavailable' | t: option_value: value -}}
+      {%- else -%}
+        {{- value -}}
+      {%- endif %}
+    </option>
+  {%- endif -%}
+{%- endfor -%}
