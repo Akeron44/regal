@@ -99,10 +99,14 @@ superpowered-video[data-context="card"] iframe {
 }
 
 .video-container superpowered-video > * {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 6 / 9;
   width: 100%;
   height: auto;
+  border-radius: 10px;
+
 }
+
+
 @supports not (aspect-ratio: 16 / 9) {
   .video-container superpowered-video > * {
     position: relative;
