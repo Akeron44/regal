@@ -88,7 +88,7 @@
   }
   
   
-  @media (max-width: 544px) {
+  @media (max-width: 768px) {
       .new-movies_section .movies_container h2 {
        margin-bottom: 20px;
        font-size: 24px;
