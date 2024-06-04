@@ -1,30 +1,43 @@
+/*Alfred Corrected the background color of the card*/
 .card {
   position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border-radius: var(--card-border-radius);
+  border-radius: 10px;
   color: var(--color-card-foreground);
-  background: var(--color-card-background);
+  background-color: #2C2B30;  
+   max-width: 406px;
+   max-height: 478px;
+
 }
+
+
 .card-media {
   position: relative;
   overflow: hidden;
 }
+
+
+/*Alfred Corrected the Image Position*/
 .card-media figure {
   border-radius: calc(var(--card-border-radius) / 1.5);
   overflow: hidden;
+  width: 342px;
+height: 342px;
+  top: 40px;
 }
 .card-body {
   padding: var(--card-body-padding);
+  margin-top: auto;
 }
 
 .card-media-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 342px;
+  height: 342px;
   overflow: hidden;
   padding: var(--card-body-padding);
 }
@@ -78,6 +91,7 @@
   position: absolute;
   bottom: 0px;
   left: 20px;
+  top: 45%;
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s ease-in;
@@ -90,7 +104,7 @@
   .card:hover quick-buy {
     opacity: 1;
     pointer-events: auto;
-    bottom: 16px;
+
   }
 }
 
@@ -178,6 +192,37 @@
   display: none;
 }
 
+/*car title*/
+.card-title{
+     font-family: "Exo 2", sans-serif;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 31px;
+  
+}
+
+.price{
+   font-family: "Exo 2", sans-serif;
+  font-weight:500;
+  font-size: 18px;
+  line-height: 31px;
+}
+
+/*Alfred Added this for the Grid*/
+.grid-footer{
+
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-column-gap: var(--gap);
+    grid-row-gap: var(--gap);
+    grid-auto-flow: dense;
+    position: relative;
+  
+}
+
+
+
+
 /* LAYOUT / Thumbnail */
 .layout--thumbnail {
   --thumbnail-width: 90px;
@@ -216,6 +261,7 @@
   justify-content: center;
   align-items: center;
   pointer-events: auto;
+
 }
 .layout--thumbnail .quick-buy_text {
   display: none;
