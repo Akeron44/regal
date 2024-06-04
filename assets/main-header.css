@@ -1,0 +1,133 @@
+
+#MainHeader{
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.header-shortlink {
+  font-family: "Exo 2", sans-serif;
+font-size: 18px;
+font-weight: 700;
+line-height: 20.8px;
+text-align: left;
+color: rgba(255, 255, 255, 1);
+}
+
+
+.searchIcon-header{
+  width: 36px;
+height: 36px;
+padding: 2px 0 0 0;
+gap: 0px;
+border-radius: 48px;
+border: 2px;
+opacity: 0px;
+background:linear-gradient(90deg, #29292B 0%, #3A383F 100%);
+border: 2px solid rgba(50, 50, 54, 1);
+  display:flex;
+  justify-content:center;
+}
+.cartIcon-header{
+    width: 36px;
+height: 36px;
+padding: 2px 0px 0px 0px;
+gap: 0px;
+border-radius: 48px;
+border: 2px;
+opacity: 0px;
+background:linear-gradient(90deg, #29292B 0%, #3A383F 100%);
+border: 2px solid rgba(50, 50, 54, 1);
+  display:flex;
+  justify-content:center;
+}
+
+.button-signup{
+  border: 2px solid rgba(245, 102, 0, 1);
+ width:83.4px;
+height: 34.68px;
+gap: 0px;
+border-radius: 48px;
+border: 2px 0px 0px 0px;
+box-shadow: 2px 4px 14px 1px rgba(21, 21, 21, 1);
+opacity: 0px;
+display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.button-signup span{
+height: 23px;
+gap: 0px;
+opacity: 0px;
+font-size: 16px;
+line-height: 18.4px;
+letter-spacing: 0.19200000166893005px;
+text-align: center;
+color: rgba(255, 255, 255, 1);
+  text-transform:none;
+}
+
+.button-login{
+  width:69.4px;
+height: 34.68px;
+padding: 2px 0px 0px 0px;
+gap: 0px;
+border-radius: 48px;
+border: 2px 0px 0px 0px;
+opacity: 0px;
+background: linear-gradient(90deg, #D54C00 8.38%, #F56600 52.76%, #FF9246 100%);
+border:2px solid rgba(245, 102, 0, 1);
+  box-shadow: 2px 4px 14px 1px rgba(21, 21, 21, 1);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.button-login span{
+height: 23px;
+gap: 0px;
+opacity: 0px;
+font-size: 16px;
+line-height: 18.4px;
+letter-spacing: 0.19200000166893005px;
+text-align: center;
+color: rgba(255, 255, 255, 1);
+  text-transform:none;
+}
+
+
+
+@media only screen and (max-width: 1600px) {
+.header-shortlink{
+  font-size:16px;
+}
+}
+
+
+@media only screen and (max-width: 1430px) {
+.header-shortlink{
+  font-size:12px;
+}
+
+}
+
+@media only screen and (max-width: 1300px) {
+.header-shortlink{
+  display:none;
+}
+}
+
+@media only screen and (max-width: 563px) {
+ .button-signup{
+  visibility:hidden;
+  display:none;
+}
+
+ #signup{
+  visibility:hidden;
+  display:none;
+  }
+
+  .header-item.--left{
+    gap:2px;
+  }
+}
