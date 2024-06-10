@@ -35,7 +35,7 @@ html:not(.template-password) main#MainContent {
   display: grid;
   grid-template-columns: 1fr min(var(--ideal-width), calc(100% - (var(--container-margin) * 2))) 1fr;
   grid-column-gap: var(--container-margin);
-       /* max-width: 1920px; */
+       max-width: 1920px;
     margin: 0 auto; /* Center the grid */
 }
 
