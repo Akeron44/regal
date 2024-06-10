@@ -56,6 +56,10 @@ html:not(.template-password) main#MainContent {
   .container.sm-down-edge-to-edge > * {
     grid-column: 1/-1;
   }
+
+   .header-content{
+    margin: 0 20px;
+  }
 }
 @media only screen and (max-width: 1023px) {
   .container.md-down-edge-to-edge > * {
@@ -697,7 +701,6 @@ header.header {
   font-style: var(--font-site-header-style);
   font-weight: var(--font-site-header-weight);
   text-transform: var(--font-site-header-text-transform);
-  letter-spacing: var(--font-site-header-letter-spacing);
 }
 header.header--shadow:not(.overlay),
 .sticky-header-show header.header--shadow {
@@ -731,12 +734,13 @@ html:not(.sticky-header-show) header.header.overlay {
   background-color: transparent;
 }
 header .header-content {
-  display: flex;
+display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: var(--gap);
-  padding: var(--padding-vertical) var(--padding-horizontal);
+  height: 80px;
+  overflow:hidden;
 }
 html:not(.sticky-header-show) header.header.overlay.use-background { 
   color: var(--color-background);
@@ -767,15 +771,21 @@ html:not(.sticky-header-show) .header-logo.--alt-on-overlay .site-logo.--alt {
   display: flex;
   flex-direction: row;
   align-items: center;
-
   gap: var(--gap);
 }
 .header-item.--left {
-  flex: 1 1 0%;
+   flex: 1 1 0%;
+  justify-content:flex-start;
+  gap:16px;
 }
+.header-item.--center{
+  justify-content: center;
+}
+
 .header-item.--right {
   flex: 1 1 0%;
-  justify-content: flex-end;
+  justify-content: end;
+  gap:8px;
 }
 .logo-left__menu-left .header-shortlinks {
   order: 2;
@@ -785,8 +795,6 @@ html:not(.sticky-header-show) .header-logo.--alt-on-overlay .site-logo.--alt {
 }
 
 .header-item__link {
-  --padding: 24px;
-  padding: calc(var(--padding) / 2);
   display: grid;
   place-content: center;
   cursor: pointer;
@@ -1695,10 +1703,10 @@ input[type='checkbox']:not(.swatch) {
   margin-right: 12px;
 }
 
-/* Icons */
-svg.feather {
+
+/* svg.feather {
   stroke-width: var(--icon-stroke);
-}
+}  */
 
 /* Banner hovers */
 a > .media img {

@@ -1,107 +1,123 @@
 {
   "sections": {
     "hero": {
-      "type": "hero",
+      "type": "new-Hero",
       "blocks": {
         "big-hero-image": {
           "type": "image",
           "settings": {
             "media_link": "",
-            "media_toggle": "show_video",
+            "media_toggle": "show_image",
+            "image": "shopify:\/\/shop_images\/DALL_E_2024-05-16_10.27.54_-_A_cinema-themed_background_featuring_Regal_branding_1_1.png",
             "video_url": "",
+            "image_mobile": "shopify:\/\/shop_images\/Link_Figure.jpg",
             "video_url_mobile": ""
-          }
-        },
-        "big-hero-title": {
-          "type": "title",
-          "settings": {
-            "title": "Welcome to Taiga",
-            "heading_tag": "h2",
-            "sm_size_multiplier": "sm-size--outrageous",
-            "sm_margin_top": 30,
-            "size_multiplier": "size--large",
-            "margin_top": 30
-          }
-        },
-        "big-hero-text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Capture your users attention with visually impressive hero banner. Use versatile content and layout options to fit your preferences.<\/p>",
-            "sm_size_multiplier": "sm-size--large",
-            "sm_margin_top": 12,
-            "size_multiplier": "size--default",
-            "margin_top": 4
-          }
-        },
-        "big-hero-buttons": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Button label",
-            "button_link_1": "",
-            "button_style_1": "",
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_2": "",
-            "button_label_3": "",
-            "button_link_3": "",
-            "button_style_3": "",
-            "sm_full_width_buttons": false,
-            "sm_size_multiplier": "sm-size--default",
-            "sm_margin_top": 24,
-            "full_width_buttons": false,
-            "size_multiplier": "size--small",
-            "margin_top": 24
           }
         }
       },
       "block_order": [
-        "big-hero-image",
-        "big-hero-title",
-        "big-hero-text",
-        "big-hero-buttons"
+        "big-hero-image"
       ],
       "settings": {
         "color_scheme": "",
         "overlay_opacity": 50,
         "enable_full_width": true,
         "section_height_desktop": "by_pixels",
-        "section_pixel_height_desktop": 760,
+        "section_pixel_height_desktop": 680,
         "content_width": "col-sm-max-8",
         "content_align_desktop": "sm-vertical-center sm-horizontal-center",
         "desktop_alignment": "sm-text-align-center",
         "md_padding_top": 0,
         "md_padding_bottom": 0,
         "section_height": "by_pixels",
-        "section_pixel_height": 580,
+        "section_pixel_height": 560,
         "content_align_mobile": "vertical-center horizontal-center",
         "mobile_alignment": "text-align-center",
         "padding_top": 0,
         "padding_bottom": 0
       }
     },
-    "featured_collection": {
-      "type": "featured-collection-or-products",
+    "movie_look_w6eLjC": {
+      "type": "movie-look",
       "blocks": {
-        "featured-collection-1-header": {
+        "section_header_xgnMwr": {
           "type": "section_header",
           "settings": {
-            "subtitle": "Showcase your products",
-            "subtitle_tag": "h6",
-            "title": "Featured collection",
+            "subtitle": "",
+            "subtitle_tag": "h3",
+            "title": "Gift Cards, Tickets, &  Vouchers",
             "title_tag": "h2",
-            "text": "",
+            "text": "<p>A trip to the movies is a perfect reward, prize, or gift.And Regal has plenty of ways to give that gift.  Add a gift card to a birthday present. Surprise a friend by texting an eCard. Treat a movie-lover to Unlimited movies. Or reward employees with a ticket to a film of their choice.<\/p>",
             "text_alignment": "text-align-center",
             "sm_size_multiplier": "sm-size--default",
             "size_multiplier": "size--default"
           }
+        },
+        "product_Mhq3Br": {
+          "type": "product",
+          "settings": {
+            "header_text": "Premiere Ticket",
+            "block_text": "$9 USD per ticket",
+            "label": "Best Seller",
+            "images": "shopify:\/\/shop_images\/Premiere_Ticket_342x342_1_2.png",
+            "image_size": "medium"
+          }
+        },
+        "product_R9Dcqp": {
+          "type": "product",
+          "settings": {
+            "header_text": "Concessions Vouchers",
+            "block_text": "$5.79 - $8.19 USD per ticket",
+            "label": "New",
+            "images": "shopify:\/\/shop_images\/flyers_1_4.png",
+            "image_size": "medium"
+          }
+        },
+        "product_EdnNRi": {
+          "type": "product",
+          "settings": {
+            "header_text": "Gift Cards",
+            "block_text": "$5.00 - $500.00 USD",
+            "label": "",
+            "images": "shopify:\/\/shop_images\/758-392142be-1e8d-42f2-a8cc-37c16c854616_1_1.png",
+            "image_size": "medium"
+          }
+        },
+        "product_P4CNnh": {
+          "type": "product",
+          "settings": {
+            "header_text": "Unlimited eCard",
+            "block_text": "$5.00 - $500.00 USD",
+            "label": "",
+            "images": "shopify:\/\/shop_images\/3d-glasses-near-cinema-stuff_1_3.png",
+            "image_size": "medium"
+          }
         }
       },
       "block_order": [
-        "featured-collection-1-header"
+        "section_header_xgnMwr",
+        "product_Mhq3Br",
+        "product_R9Dcqp",
+        "product_EdnNRi",
+        "product_P4CNnh"
       ],
       "settings": {
+        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b4ef24dd8f794241b068b56db3822ccd.mp4",
+        "cover_image": "shopify:\/\/shop_images\/Rectangle_8_e55bc2a3-d1a4-42f3-b0c0-3f505df2c95e.png",
+        "media_aspect_ratio": "portrait",
+        "enable_full_width": false,
+        "media_position": "media_first",
+        "md_padding_top": 80,
+        "md_padding_bottom": 80,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "featured-collection-2": {
+      "type": "featured-collection-or-products",
+      "settings": {
         "color_scheme": "",
-        "collection": "",
+        "collection": "home-page",
         "product_list": [
 
         ],
@@ -112,627 +128,31 @@
         "layout_desktop": "slide",
         "products_per_row_desktop": 4,
         "sm_custom_gap": -1,
-        "md_padding_top": 64,
-        "md_padding_bottom": 0,
+        "md_padding_top": 40,
+        "md_padding_bottom": 40,
         "products_per_row_tablet": 4,
         "sm_down_enable_card_thumbnail": false,
         "layout_mobile": "slide",
         "products_per_row_mobile": 1,
         "custom_gap": -1,
         "padding_top": 40,
-        "padding_bottom": 0,
-        "autoplay": false,
-        "autoplay_speed": 5,
-        "sliding_behavior": "all"
-      }
-    },
-    "sliding_text": {
-      "type": "sliding-text",
-      "blocks": {
-        "item-01": {
-          "type": "text",
-          "settings": {
-            "text": "Modern",
-            "link": ""
-          }
-        },
-        "item-02": {
-          "type": "text",
-          "settings": {
-            "text": "☆",
-            "link": ""
-          }
-        },
-        "item-03": {
-          "type": "text",
-          "settings": {
-            "text": "Elegant",
-            "link": ""
-          }
-        },
-        "item-05": {
-          "type": "text",
-          "settings": {
-            "text": "☆",
-            "link": ""
-          }
-        },
-        "item-06": {
-          "type": "text",
-          "settings": {
-            "text": "Blazing Fast",
-            "link": ""
-          }
-        },
-        "item-07": {
-          "type": "text",
-          "settings": {
-            "text": "☆",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "item-01",
-        "item-02",
-        "item-03",
-        "item-05",
-        "item-06",
-        "item-07"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "text_gradient_color": "linear-gradient(80deg, rgba(148, 148, 151, 1), rgba(72, 72, 72, 1) 99%)",
-        "content_order": "horizontal",
-        "font": "heading",
-        "direction": "normal",
-        "speed": 10,
-        "pause_on_hover": false,
-        "sm_size_multiplier": "sm-size--outrageous",
-        "sm_item_gap": 80,
-        "sm_padding": 72,
-        "md_padding_top": 64,
-        "md_padding_bottom": 64,
-        "size_multiplier": "size--large",
-        "item_gap": 24,
-        "padding": 24,
-        "padding_top": 32,
-        "padding_bottom": 32
-      }
-    },
-    "featured_look": {
-      "type": "featured-look",
-      "blocks": {
-        "featured-look-1-section-header": {
-          "type": "section_header",
-          "settings": {
-            "subtitle": "",
-            "subtitle_tag": "h3",
-            "title": "Featured look",
-            "title_tag": "h2",
-            "text": "<p>Use this section to highlight multiple products in a single image. This helps your customers to visualize how certain products look together.<\/p>",
-            "text_alignment": "text-align-left",
-            "sm_size_multiplier": "sm-size--default",
-            "size_multiplier": "size--default"
-          }
-        },
-        "featured-look-1-product-1": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "vertical_position": 25,
-            "horizontal_position": 25
-          }
-        },
-        "featured-look-1-product-2": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "vertical_position": 75,
-            "horizontal_position": 75
-          }
-        }
-      },
-      "block_order": [
-        "featured-look-1-section-header",
-        "featured-look-1-product-1",
-        "featured-look-1-product-2"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "enable_full_width": false,
-        "media_position": "media_last",
-        "md_padding_top": 0,
-        "md_padding_bottom": 0,
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "ondemand_info": {
-      "type": "on-demand-info",
-      "blocks": {
-        "on-demand-info-1-info_block-1": {
-          "type": "info_block",
-          "settings": {
-            "title": "Delivery Terms",
-            "video_url": "",
-            "text": "<p>This is the on demand info shown when the Hotspot is clicked. Use versatile content to fit your preferences.<\/p>"
-          }
-        },
-        "on-demand-info-1-info_block-2": {
-          "type": "info_block",
-          "settings": {
-            "title": "Return Policy",
-            "video_url": "",
-            "text": "<p>This is the on demand info shown when the Hotspot is clicked. Use versatile content to fit your preferences.<\/p>"
-          }
-        },
-        "on-demand-info-1-info_block-3": {
-          "type": "info_block",
-          "settings": {
-            "title": "Legal Notices",
-            "video_url": "",
-            "text": "<p>This is the on demand info shown when the Hotspot is clicked. Use versatile content to fit your preferences.<\/p>"
-          }
-        },
-        "on-demand-info-1-info_block-4": {
-          "type": "info_block",
-          "settings": {
-            "title": "FAQ",
-            "video_url": "",
-            "text": "<p>This is the on demand info shown when the Hotspot is clicked. Use versatile content to fit your preferences.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "on-demand-info-1-info_block-1",
-        "on-demand-info-1-info_block-2",
-        "on-demand-info-1-info_block-3",
-        "on-demand-info-1-info_block-4"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "show_link_icon": true,
-        "title_style": "body-text flex gap-half-gutter",
-        "items_per_row_desktop": 4,
-        "enable_full_width": false,
-        "sm_text_alignment": "sm-text-align-center",
-        "sm_size_multiplier": "sm-size--default",
-        "md_padding_top": 88,
-        "md_padding_bottom": 88,
-        "items_per_row_tablet": 4,
-        "text_alignment": "text-align-center",
-        "size_multiplier": "size--default",
-        "items_per_row_mobile": 2,
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
-    },
-    "hero-2": {
-      "type": "hero",
-      "blocks": {
-        "hero-2-image-1": {
-          "type": "image",
-          "settings": {
-            "media_link": "",
-            "media_toggle": "show_video",
-            "video_url": "",
-            "video_url_mobile": ""
-          }
-        },
-        "hero-2-title-1": {
-          "type": "title",
-          "settings": {
-            "title": "Hero banner",
-            "heading_tag": "h2",
-            "sm_size_multiplier": "sm-size--outrageous",
-            "sm_margin_top": 0,
-            "size_multiplier": "size--huge",
-            "margin_top": 0
-          }
-        },
-        "hero-2-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Capture your users attention with visually impressive hero banner. Use versatile content and layout options to fit your preferences.<\/p>",
-            "sm_size_multiplier": "sm-size--large",
-            "sm_margin_top": 0,
-            "size_multiplier": "size--default",
-            "margin_top": 0
-          }
-        },
-        "hero-2-buttons-1": {
-          "type": "buttons",
-          "disabled": true,
-          "settings": {
-            "button_label_1": "Button label",
-            "button_link_1": "",
-            "button_style_1": "",
-            "button_label_2": "Button label",
-            "button_link_2": "",
-            "button_style_2": "",
-            "button_label_3": "",
-            "button_link_3": "",
-            "button_style_3": "",
-            "sm_full_width_buttons": false,
-            "sm_size_multiplier": "sm-size--default",
-            "sm_margin_top": 24,
-            "full_width_buttons": false,
-            "size_multiplier": "size--default",
-            "margin_top": 24
-          }
-        }
-      },
-      "block_order": [
-        "hero-2-image-1",
-        "hero-2-title-1",
-        "hero-2-text-1",
-        "hero-2-buttons-1"
-      ],
-      "settings": {
-        "color_scheme": "alternative-1",
-        "overlay_opacity": 20,
-        "enable_full_width": false,
-        "section_height_desktop": "by_pixels",
-        "section_pixel_height_desktop": 600,
-        "content_width": "col-sm-max-8",
-        "content_align_desktop": "sm-vertical-center sm-horizontal-center",
-        "desktop_alignment": "sm-text-align-center",
-        "md_padding_top": 64,
-        "md_padding_bottom": 24,
-        "section_height": "by_pixels",
-        "section_pixel_height": 400,
-        "content_align_mobile": "vertical-center horizontal-center",
-        "mobile_alignment": "text-align-center",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "collection-list": {
-      "type": "collection-list",
-      "blocks": {
-        "collection-list-section_header-1": {
-          "type": "section_header",
-          "disabled": true,
-          "settings": {
-            "subtitle": "Browse by category",
-            "subtitle_tag": "h6",
-            "title": "Collection list",
-            "title_tag": "h2",
-            "text": "",
-            "text_alignment": "text-align-center",
-            "sm_size_multiplier": "sm-size--default",
-            "size_multiplier": "size--default"
-          }
-        },
-        "collection-list-collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "card_bg": "bg-solid"
-          }
-        },
-        "collection-list-collection-2": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "card_bg": "bg-solid"
-          }
-        },
-        "collection-list-collection-3": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "card_bg": "bg-solid"
-          }
-        },
-        "collection-list-collection-4": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "card_bg": "bg-solid"
-          }
-        }
-      },
-      "block_order": [
-        "collection-list-section_header-1",
-        "collection-list-collection-1",
-        "collection-list-collection-2",
-        "collection-list-collection-3",
-        "collection-list-collection-4"
-      ],
-      "settings": {
-        "color_scheme": "alternative-1",
-        "enable_full_width": false,
-        "layout_desktop": "grid",
-        "collections_per_row_desktop": 4,
-        "sm_custom_gap": -1,
-        "md_padding_top": 0,
-        "md_padding_bottom": 64,
-        "collections_per_row_tablet": 4,
-        "layout_mobile": "slide peek",
-        "collections_per_row_mobile": 1,
-        "custom_gap": -1,
-        "padding_top": 24,
-        "padding_bottom": 64,
-        "autoplay": false,
-        "autoplay_speed": 5,
-        "sliding_behavior": "all"
-      }
-    },
-    "the-rich-text": {
-      "type": "rich-text",
-      "blocks": {
-        "the-rich-text-title-1": {
-          "type": "title",
-          "settings": {
-            "title": "Rich text heading",
-            "heading_tag": "h2",
-            "sm_size_multiplier": "sm-size--gigantic",
-            "sm_margin_top": 0,
-            "size_multiplier": "size--default",
-            "margin_top": 0
-          }
-        },
-        "the-rich-text-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Tell more about your products or brand or use this section to tell more about a single product on the product template. Use content and layout options to fit your preferences.<\/p>",
-            "sm_size_multiplier": "sm-size--huge",
-            "sm_margin_top": 0,
-            "size_multiplier": "size--default",
-            "margin_top": 0
-          }
-        }
-      },
-      "block_order": [
-        "the-rich-text-title-1",
-        "the-rich-text-text-1"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "text_gradient_color": "linear-gradient(135deg, rgba(218, 218, 218, 1), rgba(128, 128, 128, 1) 98%)",
-        "content_width": 100,
-        "desktop_content_alignment": "center",
-        "desktop_alignment": "sm-text-align-center",
-        "md_padding_top": 120,
-        "md_padding_bottom": 40,
-        "mobile_alignment": "text-align-left",
-        "padding_top": 48,
-        "padding_bottom": 24
-      }
-    },
-    "featured-collection-2": {
-      "type": "featured-collection-or-products",
-      "settings": {
-        "color_scheme": "",
-        "collection": "",
-        "product_list": [
-          "small-popcorn-voucher",
-          "small-drink-voucher",
-          "snack-pack-voucher",
-          "candy-voucher"
-        ],
-        "product_limit": 4,
-        "view_all": false,
-        "enable_full_width": false,
-        "sm_enable_card_thumbnail": false,
-        "layout_desktop": "grid",
-        "products_per_row_desktop": 4,
-        "sm_custom_gap": -1,
-        "md_padding_top": 40,
-        "md_padding_bottom": 40,
-        "products_per_row_tablet": 4,
-        "sm_down_enable_card_thumbnail": false,
-        "layout_mobile": "slide peek",
-        "products_per_row_mobile": 1,
-        "custom_gap": -1,
-        "padding_top": 0,
         "padding_bottom": 40,
         "autoplay": false,
         "autoplay_speed": 5,
         "sliding_behavior": "all"
       }
     },
-    "image-with-hotspots": {
-      "type": "image-with-hotspots",
-      "blocks": {
-        "image-with-hotspots-image-1": {
-          "type": "image",
-          "settings": {
-            "video_url": "",
-            "media_toggle": "show_image",
-            "md_padding_top": 0,
-            "md_padding_bottom": 0,
-            "padding_top": 0,
-            "padding_bottom": 0
-          }
-        },
-        "image-with-hotspots-hotspot-1": {
-          "type": "hotspot",
-          "settings": {
-            "title": "Hotspot title",
-            "title_position": "right",
-            "vertical_position": 25,
-            "horizontal_position": 25,
-            "video_url": "",
-            "text": "<p>This is the on demand info shown when the Hotspot is clicked.<\/p>"
-          }
-        },
-        "image-with-hotspots-hotspot-2": {
-          "type": "hotspot",
-          "settings": {
-            "title": "Hotspot title",
-            "title_position": "right",
-            "vertical_position": 75,
-            "horizontal_position": 75,
-            "video_url": "",
-            "text": "<p>This is the on demand info shown when the Hotspot is clicked.<\/p>"
-          }
-        },
-        "image-with-hotspots-subtitle-1": {
-          "type": "subtitle",
-          "settings": {
-            "subtitle": "Subheading",
-            "heading_tag": "h6",
-            "sm_size_multiplier": "sm-size--default",
-            "sm_margin_top": 0,
-            "size_multiplier": "size--default",
-            "margin_top": 0
-          }
-        },
-        "image-with-hotspots-title-1": {
-          "type": "title",
-          "settings": {
-            "title": "Image hotspots",
-            "heading_tag": "h2",
-            "sm_size_multiplier": "sm-size--default",
-            "sm_margin_top": 0,
-            "size_multiplier": "size--default",
-            "margin_top": 0
-          }
-        },
-        "image-with-hotspots-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Highlight certain features of a product or certain information on the image. Use versatile content and layout options to fit your preferences.<\/p>",
-            "sm_size_multiplier": "sm-size--default",
-            "sm_margin_top": 12,
-            "size_multiplier": "size--default",
-            "margin_top": 0
-          }
-        },
-        "image-with-hotspots-button-1": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style": "",
-            "sm_size_multiplier": "sm-size--default",
-            "sm_margin_top": 24,
-            "size_multiplier": "size--default",
-            "margin_top": 24
-          }
-        }
-      },
-      "block_order": [
-        "image-with-hotspots-image-1",
-        "image-with-hotspots-hotspot-1",
-        "image-with-hotspots-hotspot-2",
-        "image-with-hotspots-subtitle-1",
-        "image-with-hotspots-title-1",
-        "image-with-hotspots-text-1",
-        "image-with-hotspots-button-1"
-      ],
+    "upcoming_movies_bqB73E": {
+      "type": "upcoming-movies",
       "settings": {
-        "color_scheme": "",
-        "section_bg": "",
-        "numbered_hotspots": false,
-        "enable_full_width": false,
-        "media_position": "media_last",
-        "content_width": "col-sm-max-3",
-        "desktop_alignment": "sm-text-align-left",
-        "sm_full_width_buttons": false,
-        "md_padding_top": 40,
-        "md_padding_bottom": 40,
-        "mobile_alignment": "text-align-left",
-        "full_width_buttons": false,
-        "sm_down_hide_hotspot_titles": false,
-        "padding_top": 0,
-        "padding_bottom": 24
-      }
-    },
-    "image-with-text": {
-      "type": "image-with-text",
-      "blocks": {
-        "image-with-text-image-1": {
-          "type": "image",
-          "settings": {
-            "video_url": "",
-            "media_aspect_ratio": "square",
-            "media_toggle": "show_video",
-            "media_link": ""
-          }
-        },
-        "image-with-text-subtitle-1": {
-          "type": "subtitle",
-          "settings": {
-            "subtitle": "Subheading",
-            "heading_tag": "h3",
-            "sm_size_multiplier": "sm-size--default",
-            "sm_margin_top": 0,
-            "size_multiplier": "size--default",
-            "margin_top": 0
-          }
-        },
-        "image-with-text-title-1": {
-          "type": "title",
-          "settings": {
-            "title": "Image with text",
-            "heading_tag": "h2",
-            "sm_size_multiplier": "sm-size--default",
-            "sm_margin_top": 0,
-            "size_multiplier": "size--default",
-            "margin_top": 0
-          }
-        },
-        "image-with-text-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Traditional image with text section for versatile usage. Use content and layout options to fit your preferences.<\/p>",
-            "sm_size_multiplier": "sm-size--default",
-            "sm_margin_top": 0,
-            "size_multiplier": "size--default",
-            "margin_top": 0
-          }
-        },
-        "image-with-text-button-1": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style": "",
-            "sm_size_multiplier": "sm-size--default",
-            "sm_margin_top": 24,
-            "size_multiplier": "size--default",
-            "margin_top": 24
-          }
-        }
-      },
-      "block_order": [
-        "image-with-text-image-1",
-        "image-with-text-subtitle-1",
-        "image-with-text-title-1",
-        "image-with-text-text-1",
-        "image-with-text-button-1"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "enable_full_width": false,
-        "media_position": "media_first",
-        "content_width": "col-sm-max-3",
-        "desktop_alignment": "sm-text-align-left",
-        "sm_full_width_buttons": false,
-        "md_padding_top": 0,
-        "md_padding_bottom": 40,
-        "mobile_alignment": "text-align-left",
-        "full_width_buttons": false,
-        "padding_top": 24,
-        "padding_bottom": 24
+        "new_movies": "Upcoming movies - June"
       }
     }
   },
   "order": [
     "hero",
-    "featured_collection",
-    "sliding_text",
-    "featured_look",
-    "ondemand_info",
-    "hero-2",
-    "collection-list",
-    "the-rich-text",
+    "movie_look_w6eLjC",
     "featured-collection-2",
-    "image-with-hotspots",
-    "image-with-text"
+    "upcoming_movies_bqB73E"
   ]
 }
