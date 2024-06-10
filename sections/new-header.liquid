@@ -160,7 +160,7 @@
     <div class="header-item --right">
       {%- comment -%} Country selector {%- endcomment -%}
       {%- if section.settings.region_menu != 'hide' and localization.available_countries.size > 1 -%}
-         <button class="header-shortlink js flex center-center medium-down--hide" style="gap:4px" data-drawer-submenu-open="#localization">
+         <button class="header-shortlink js flex center-center medium-down--hide" style="gap:4px"  data-drawer-submenu-open="#localization">
           {%- case section.settings.region_menu -%} 
             {%- when 'globe' -%}
               {% render 'icon-globe' %}
