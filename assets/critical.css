@@ -35,9 +35,12 @@ html:not(.template-password) main#MainContent {
   display: grid;
   grid-template-columns: 1fr min(var(--ideal-width), calc(100% - (var(--container-margin) * 2))) 1fr;
   grid-column-gap: var(--container-margin);
-       max-width: 1920px;
+        max-width: 1920px; /* Set the maximum width */
     margin: 0 auto; /* Center the grid */
 }
+
+
+
 
 .container > * {
   grid-column: 2;
@@ -344,7 +347,7 @@ model-viewer, product-model {
 
 .mb-gutter { margin-bottom: var(--gutter) }
 .mb-0  { margin-bottom: 0px }
-.mb-4  { margin-bottom: 10px}
+.mb-4  { margin-bottom: 4px }
 .mb-8  { margin-bottom: 8px }
 .mb-12 { margin-bottom: 12px }
 .mb-16 { margin-bottom: 16px }
@@ -684,7 +687,6 @@ model-viewer, product-model {
 /* SITE HEADER */
 header.header {
   width: 100%;
-  max-width:100%;
   overflow-x: hidden;
   --padding-vertical: 4px;
   --padding-horizontal: 8px;
@@ -728,14 +730,14 @@ html:not(.sticky-header-show) header.header.overlay {
   background-color: transparent;
 }
 header .header-content {
-display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap:100px;
-  height: 80px;
-  overflow:hidden;
-}
+  display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap:100px;
+    height: 80px;
+    overflow:hidden;
+  }
 html:not(.sticky-header-show) header.header.overlay.use-background { 
   color: var(--color-background);
 }
