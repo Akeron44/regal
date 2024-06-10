@@ -1,0 +1,48 @@
+
+/* added by Amarilda to style the product related title */
+.section-header.mb-gutter.col-sm-max-6.text-align-left.p-page.sm-p-0 h2{
+    margin-top:47px;
+    width: 286px;
+  height: 31px;
+  top: 958px;
+  left: 113px;
+  gap: 0px;
+  opacity: 0px;
+   font-family: "Exo 2", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 31px;
+  text-align: left;
+  color:rgba(255, 255, 255, 1);
+    padding-left:4px;
+  }
+  
+  
+  #template--18066507923692__the-product-recommendations{
+    gap:62px;
+  }
+  
+  @media only screen and (max-width: 1024px) {
+     #template--18066507923692__the-product-recommendations{
+       width:100%;
+       padding-right:15px;
+     }
+  
+    .section-header.mb-gutter.col-sm-max-6.text-align-left.p-page.sm-p-0 h2{
+      margin-top:37px;
+    }
+  }
+  
+  @media only screen and (max-width: 767px) {
+    #template--18066507923692__the-product-recommendations{
+      gap:20px;
+      width:100%;
+      padding-right:0px;
+    }
+  
+    .section-header.mb-gutter.col-sm-max-6.text-align-left.p-page.sm-p-0 h2{
+      width: 200px;
+      font-size: 23px;
+    }
+  }
+  
