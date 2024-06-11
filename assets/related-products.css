@@ -15,17 +15,14 @@
   text-align: left;
   color:rgba(255, 255, 255, 1);
     padding-left:4px;
+    margin-bottom:55px;
   }
   
-  
-  #template--18066507923692__the-product-recommendations{
-    gap:62px;
-  }
   
   @media only screen and (max-width: 1024px) {
      #template--18066507923692__the-product-recommendations{
        width:100%;
-       padding-right:15px;
+        padding-right:0px;
      }
   
     .section-header.mb-gutter.col-sm-max-6.text-align-left.p-page.sm-p-0 h2{
@@ -43,6 +40,8 @@
     .section-header.mb-gutter.col-sm-max-6.text-align-left.p-page.sm-p-0 h2{
       width: 200px;
       font-size: 23px;
+      margin-bottom:20px;
+      padding-left:0;
     }
   }
   
