@@ -1,0 +1,41 @@
+{{ 'upcoming-movies.css' | asset_url | stylesheet_tag }}
+
+<section class="new-movies_section">
+  <div class="movies_container container">
+    <h2>{{ section.settings.new_movies }}</h2>
+    <div class="movies_wrapper">
+      {% render 'border-svg' %}
+      <ul class="movies_list">
+        {% for movie in shop.metaobjects.new_movies.values limit: 5 %}
+          <li class="movie-item">
+            <div class="img-container">
+              <img src="{{ movie.image }}" alt="The new upcoming movies">
+            </div>
+            <p>{{ movie.release_date | date: "%B %-d" }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+      {% render 'border-svg' %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Upcoming Movies",
+    "settings": [
+      {
+        "type": "text",
+        "id": "new_movies",
+        "label": "Upcoming Movies",
+        "default": "Upcoming movies - Month",
+        "info": "This is the section name of your upcoming movies"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Upcoming Movies"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,195 @@
+.card-layout {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--card-border-radius);
+  color: var(--color-card-foreground);
+  box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, 0.25);
+  background: #2c2b30;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.superpowered-video {
+  display: block;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.mb-gutter {
+  margin-bottom: 0;
+}
+
+.card-body {
+  padding-bottom: 3.8rem;
+}
+
+.card-content {
+  padding: 24px 24px 35px 24px;
+}
+
+.layout.grid-cols-1 {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.example {
+  display: flex;
+  align-items: center;
+  height: 14.8rem;
+  padding-top: 53px;
+}
+
+.labels {
+  position: absolute;
+  top: 1.6rem;
+  right: 29px;
+}
+
+.card-titles {
+  font-family: "Exo 2", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 31px;
+  text-align: left;
+  padding-bottom: 3px;
+}
+
+.card-fields {
+  font-family: "Exo 2", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 31px;
+  text-align: left;
+}
+
+div[id*="movie_look"] .section-header p {
+  margin-bottom: 1rem;
+  font-family: "Exo 2", sans-serif;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 31px;
+  text-align: center;
+}
+
+div[id*="movie_look"] .section-header h2 {
+  font-family: Roboto;
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 70px;
+  text-align: center;
+}
+
+.labels.Best.Seller {
+  background: linear-gradient(233.7deg, #ffa300 0%, #ff6900 100%);
+  color: white;
+  padding: 1px 24px;
+  gap: 10px;
+  border-radius: 50px;
+  height: 31px;
+  align-items: center;
+  display: flex;
+}
+
+.labels.New {
+  background: linear-gradient(233.7deg, #00acd0 0%, #1ab298 65.38%, #2bb673 100%);
+  border-radius: 50px;
+  color: white;
+  width: 71px;
+  height: 31px;
+  gap: 0;
+}
+
+.New,
+.Best.Seller {
+  font-family: "Exo 2", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 31px;
+  text-align: center;
+}
+
+@media (min-width: 1920px) {
+  .movie-container {
+    margin: 0 110px;
+    grid-template-columns: 1fr;
+  }
+  .movie-container > * {
+    grid-column: span 2;
+    gap: 9.2rem;
+  }
+}
+
+@media (max-width: 1130px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1400px) {
+  div[id*="movie_look"] .section-header h2 {
+    font-size: 30px !important;
+    line-height: 32px !important;
+  }
+
+  div[id*="movie_look"] .section-header p {
+    font-size: 14px !important;
+    line-height: 28px !important;
+  }
+
+  .card-titles {
+    font-size: 20px !important;
+  }
+
+  .card-fields {
+    font-size: 15px !important;
+  }
+
+  .labels.Best.Seller {
+    padding: 1px 15px !important;
+  }
+    .New,
+  .Best.Seller {
+    font-size: 9px !important;
+  }
+    .labels {
+    position: absolute;
+    top: 1rem !important;
+    right: 1rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .movie-container > * {
+    gap: 7rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .card-layout {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .card-titles {
+    font-size: 15px !important;
+    line-height: 21px !important;
+  }
+
+  .card-fields {
+    font-size: 13px !important;
+    line-height: 21px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .labels.Best.Seller {
+    padding: 1px 10px !important;
+  }
+
