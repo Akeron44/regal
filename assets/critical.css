@@ -34,6 +34,7 @@ html:not(.template-password) main#MainContent {
   grid-template-columns: 1fr min(var(--ideal-width), calc(100% - (var(--container-margin) * 2))) 1fr;
   grid-column-gap: var(--container-margin);
 }
+
 .container > * {
   grid-column: 2;
 }
@@ -1282,13 +1283,11 @@ summary::-webkit-details-marker {
 
 summary,
 .summary-title {
-  border-top: 1px solid var(--color-borders);
-  font-weight: bold;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 0.8em 0;
 }
 
 :is(summary, .summary-title) svg {
@@ -1316,7 +1315,6 @@ quantity-input, .quantity {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: solid 1px var(--color-borders);
   position: relative;
   width: var(--width);
   border-radius: var(--button-border-radius);
