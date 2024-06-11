@@ -98,9 +98,6 @@
     vertical-align:middle;
   }
   
-   .header-content{
-      margin: 0 20px;
-    }
   
   .center-center{
     align-items:flex-start;
@@ -164,4 +161,12 @@
       height: 67px;
     }
   
+  }
+
+
+@media only screen and (max-width: 768px) {
+
+    .header-content{
+      margin: 0 20px;
+    }
   }
