@@ -34,7 +34,8 @@
   endif
 
 -%}
-
+<!-- Added css file from Akeron -->
+{{ 'product-grid-queries.css' | asset_url | stylesheet_tag }}
 {%- paginate collection.products by section.settings.products_per_page -%}
   <div
     id="collection-ajax"

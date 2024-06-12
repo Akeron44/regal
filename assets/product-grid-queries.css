@@ -1,0 +1,6 @@
+/* Akeron added media query */
+@media (min-width: 1920px) {
+    .custom-container {
+      grid-template-columns: 110px 1fr 110px !important;
+    }
+}
