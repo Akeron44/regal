@@ -1,1 +1,40 @@
-{"sections":{"banner":{"type":"main-collection-banner","settings":{"image_layout":"show as_bg","center_text":true,"md_padding_top":24,"md_padding_bottom":24,"padding_top":32,"padding_bottom":32}},"products":{"type":"main-collection-product-grid","settings":{"products_per_page":16,"show_count":true,"enable_sorting":true,"enable_filtering":true,"enable_full_width":false,"md_items_per_row":4,"md_padding_top":24,"md_padding_bottom":56,"sm_items_per_row":4,"items_per_row":1,"padding_top":24,"padding_bottom":32}}},"order":["banner","products"]}
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "color_scheme": "",
+        "image_layout": "show as_bg",
+        "center_text": true,
+        "md_padding_top": 24,
+        "md_padding_bottom": 24,
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "products": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "color_scheme": "",
+        "products_per_page": 16,
+        "show_count": true,
+        "enable_sorting": true,
+        "enable_filtering": true,
+        "enable_full_width": false,
+        "md_items_per_row": 4,
+        "sm_grid_gap": -1,
+        "md_padding_top": 24,
+        "md_padding_bottom": 56,
+        "sm_items_per_row": 3,
+        "items_per_row": 1,
+        "grid_gap": -1,
+        "padding_top": 24,
+        "padding_bottom": 32
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "products"
+  ]
+}

@@ -34,12 +34,13 @@
   endif
 
 -%}
-
+<!-- Added css file from Akeron -->
+{{ 'product-grid-queries.css' | asset_url | stylesheet_tag }}
 {%- paginate collection.products by section.settings.products_per_page -%}
   <div
     id="collection-ajax"
     data-ajax-parent
-    class="container custom-child-for-animation mt mb sm-mt sm-mb{% if section.settings.enable_full_width %} full-width{% endif %} color-{{ section.settings.color_scheme }}"
+    class="custom-container container custom-child-for-animation mt mb sm-mt sm-mb{% if section.settings.enable_full_width %} full-width{% endif %} color-{{ section.settings.color_scheme }}"
     style="
       --mt: {{ section.settings.padding_top | append: 'px' }};
       --mb: {{ section.settings.padding_bottom | append: 'px' }};
@@ -105,12 +106,17 @@
         </div>
       {%- endif -%}
     </div>
-
     <div id="pagination-ajax">
       {%- if paginate.pages > 1 -%}
         {% render 'pagination', paginate: paginate, anchor: '' %}
       {%- endif -%}
     </div>
+    <!-- Description hidden by Akeron -->
+            <!-- {%- unless collection.description == blank -%}  
+        <div class="mt-12 rte description">
+          {{ collection.description }}
+        </div>
+      {%- endunless -%} -->
   </div>
 {%- endpaginate -%}
 

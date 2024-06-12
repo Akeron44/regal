@@ -1,35 +1,59 @@
-/*Alfred Corrected the background color of the card*/
+/*Akeron added align-items*/
 .card {
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   overflow: hidden;
   border-radius: 10px;
   color: var(--color-card-foreground);
   background-color: #2C2B30;  
-   max-width: 406px;
-   max-height: 478px;
-
+  max-width: 406px;
+  max-height: 478px;
+  align-items: center;
+  padding: 56px 32px 27px;
 }
 
+.card label {
+  background-color: #C72D00;
+  position: absolute;
+  top: 22px;
+  left: 32px;
+  z-index: 10;
+  padding: 0px 15px;
+  border-radius: 20px;
+  opacity: 0px;
+  font-family: "Exo 2", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 31px;
+  color: #fff;
+}
 
+/* Akeron changed card-media */
 .card-media {
   position: relative;
-  overflow: hidden;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
-/*Alfred Corrected the Image Position*/
+/* Akeron removed top  */
 .card-media figure {
   border-radius: calc(var(--card-border-radius) / 1.5);
   overflow: hidden;
   width: 342px;
-height: 342px;
-  top: 40px;
+  max-height: 300px;
 }
-.card-body {
-  padding: var(--card-body-padding);
-  margin-top: auto;
+/* Akeron added align-self and removes margin-top and padding: var(--card-body-padding) */
+.voucher-body {
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
 }
 
 .card-media-overlay {

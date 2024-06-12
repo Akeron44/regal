@@ -53,8 +53,7 @@
   
   @media (min-width: 1920px) {
     .new-movies_section .movies_container {
-      margin: 0 110px;
-      grid-template-columns: 1fr;
+      grid-template-columns: 110px 1fr 110px;
       grid-column-gap: 0;  
     }
   }
