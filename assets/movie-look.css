@@ -16,7 +16,6 @@
   height: 100%;
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
 }
 
 .mb-gutter {
@@ -47,7 +46,8 @@
 .labels {
   position: absolute;
   top: 1.6rem;
-  right: 29px;
+  right: 33px;
+
 }
 
 .card-titles {
@@ -77,7 +77,7 @@ div[id*="movie_look"] .section-header p {
 }
 
 div[id*="movie_look"] .section-header h2 {
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
   font-size: 54px;
   font-weight: 700;
   line-height: 70px;
@@ -99,9 +99,13 @@ div[id*="movie_look"] .section-header h2 {
   background: linear-gradient(233.7deg, #00acd0 0%, #1ab298 65.38%, #2bb673 100%);
   border-radius: 50px;
   color: white;
-  width: 71px;
+  padding: 1px 24px;
+  width: 78px;
   height: 31px;
-  gap: 0;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: white;
 }
 
 .New,
@@ -113,13 +117,14 @@ div[id*="movie_look"] .section-header h2 {
   text-align: center;
 }
 
+.card-width {
+  min-width: 130px
+}
+
+
+
 @media (min-width: 1920px) {
-  .movie-container {
-    margin: 0 110px;
-    grid-template-columns: 1fr;
-  }
   .movie-container > * {
-    grid-column: span 2;
     gap: 9.2rem;
   }
 }
