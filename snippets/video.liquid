@@ -1,9 +1,9 @@
 {{ 'component-video.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
+
   # ** Purpose **
   # 'video' snippet generates HTML Video element that supports different sources for mobile and desktop as well as lazyloading.
-
   # ** Parameters **
   # src           =>  {string} video file URL - REQUIRED
   # src_mobile    =>  {string} video file URL - OPTIONAL
@@ -14,18 +14,18 @@
   # muted         =>  {boolean} Mute the video - OPTIONAL (default: false)
   # loop          =>  {boolean} Loop the video - OPTIONAL (default: false)
   # poster        =>  {string} URL of the poster image - OPTIONAL (default: none)
- 
+
   # ** How to use **
-  # render 'video', src: <url>, src_mobile: <url>, lazyload: <boolean>, alt: <string>
- 
-  # Videos should be wrapped inside .media class so the aspect ratio is contained. To disable automatic wrapping set wrapped as false.
+  # render 'video', src: <url>, src_mobile: <url>, lazyload: <boolean>, alt: <string
+  # Videos should be wrapped inside .media class so the aspect ratio is contained. To disable automatic wrapping set wrapped as false
 
-  assign video_type = 'mp4'
-  assign video_type_mobile = 'mp4'
-
+   
   if src == blank or src == nil
     assign src = 'placeholder_video.mp4' | asset_url
   endif
+
+  assign video_type = 'mp4'
+  assign video_type_mobile = 'mp4'
 
   if src contains 'youtube' or src contains 'youtu.be'
     assign video_type = 'youtube'
@@ -52,12 +52,7 @@
     assign attributes = attributes | append: 'preload="auto"' | append: ' '
   endif
 
-  
-  # Force video muting if autoplay is enabled, otherwise use whatever was provided to the snippet
-  if poster != blank
-    assign autoplay = false
-  endif
-
+  # Force video muting if autoplay is enabled
   if autoplay == true
     assign muted = true
     assign attributes = attributes | append: 'autoplay' | append: ' '
@@ -80,7 +75,6 @@
     assign attributes = attributes | append: 'poster="' | append: poster_url | append: '"' | append: ' '
   endif
   
-  # convert https://woolman.co/video.mp4?xyz --> mp4
   assign src_file_type = src | split: '.' | last | split: '?' | first
   assign mobile_src_file_type = src_mobile | split: '.' | last | split: '?' | first
 
@@ -146,7 +140,7 @@
     data-desktop-video-type="{% if video_type != 'mp4' %}external{% else %}cdn{% endif %}">
     {{ video_html }}
   </div>
-{%- endif -%}
+{%- endif %}
 
 {%- unless alt == blank -%}
   <figcaption class="visually-hidden">{{ alt }}</figcaption>

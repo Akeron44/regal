@@ -2,23 +2,25 @@
 {{ 'component-hotspots.css' | asset_url | stylesheet_tag }}
 {{ 'movie-look.css' | asset_url | stylesheet_tag }}
 
-
-{%- liquid 
-  assign product_blocks = section.blocks | where: 'type', 'product' 
+{%- liquid
+  assign product_blocks = section.blocks | where: 'type', 'product'
 -%}
 
-<div id="{{ section.id }}"
+<div
+  id="{{ section.id }}"
   class="pt pb sm-pt sm-pb movie-container container  {% if section.settings.enable_full_width %} sm-edge-to-edge sm-p-page{% endif %} color-{{ section.settings.color_scheme }}"
   style="
     --pt: {{ section.settings.padding_top | append: 'px' }};
     --pb: {{ section.settings.padding_bottom | append: 'px' }};
     --sm-pt: {{ section.settings.md_padding_top | append: 'px' }};
     --sm-pb: {{ section.settings.md_padding_bottom | append: 'px' }};
-  ">
+        margin-top: 26px;
+  "
+>
   <div class="grid col-align-items-center col-justify-items-center mb-gutter">
     <div class="col-12 col-sm-6 {% if section.settings.media_position == 'media_last' %} col-sm-order-2{% endif %}">
-      <div class=""> 
-       {%-
+      <div class="">
+        {%-
           render 'video',
           poster: section.settings.cover_image | img_url: 'master',
           src: section.settings.video_url,
@@ -26,10 +28,10 @@
           loop: true,
           aspect_ratio: section.settings.media_aspect_ratio,
           lazyload: true,
-          controls: true
+          controls: true,
+          muted: true  
+
         -%}
-        
-       
       </div>
     </div>
 
@@ -48,22 +50,26 @@
                 subtitle_tag: block.settings.subtitle_tag,
                 title: block.settings.title,
                 title_tag: block.settings.title_tag,
-                text: block.settings.text -%}
-  
+                text: block.settings.text
+              -%}
+
             {%- when 'product' -%}
-             <div class="card-layout card--product">
+              <div class="card-layout card--product">
                 <div class="card-body example">
                   <div>
-                    <img src="{{ block.settings.images | image_url: width: 130}}" height="">
+                    <div class="card-width">
+                      <img src="{{ block.settings.images | image_url: width: 130}}" height="">
+                    </div>
                     <div class="labels {{ block.settings.label }}">{{ block.settings.label }}</div>
                   </div>
                   <div class="card-content">
                     <div class="card-titles">{{ block.settings.header_text }}</div>
                     <div class="card-fields">{{ block.settings.block_text }}</div>
+                    <div class="card-fields">{{ block.settings.blocks_text }}</div>
+
                   </div>
                 </div>
               </div>
-         
           {%- endcase -%}
         {%- endfor -%}
       </div>
@@ -86,7 +92,7 @@
           "type": "text",
           "id": "video_url",
           "label": "Video URL",
-          "default": "https://www.youtube.com/watch?v=4IdoUuoG1Rc"
+          "default": "https://cdn.shopify.com/videos/c/o/v/b4ef24dd8f794241b068b56db3822ccd.mp4"
         },
     {
       "type": "image_picker",
@@ -285,7 +291,7 @@
           "type": "richtext",
           "id": "text",
           "label": "t:sections.inputs.text.text",
-          "default": "<p>Use this section to highlight multiple products in a single image. This helps your customers to visualize how certain products look together.</p>"
+          "default": "<p>A trip to the movies is a perfect reward, prize, or gift.And Regal has plenty of ways to give that gift.  Add a gift card to a birthday present. Surprise a friend by texting an eCard. Treat a movie-lover to Unlimited movies. Or reward employees with a ticket to a film of their choice.</p>"
         },
         {
           "type": "select",
@@ -407,14 +413,17 @@
         "label": "Block Text",
         "default": "This is the block text."
       },
+       {
+        "type": "text",
+        "id": "blocks_text",
+        "label": "Block Text",
+        "default": "This is the block text."
+      },
           {
             "type": "text",
             "id": "label",
-            "label": "Label",
-            "default": "Label"
+            "label": "Label"
           },
-
-
       {
         "type": "image_picker",
         "id": "images",
