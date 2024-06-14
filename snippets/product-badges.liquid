@@ -15,7 +15,7 @@
   endif
 
   assign is_sale = false
-  if product.compare_at_price_max > product.price_min
+  if product_tags contains 'Sale' or product_tags contains 'Sale' or product.metafields.woolman.Sale.value == true
     assign is_sale = true
     assign show_badges = true
   endif
@@ -41,40 +41,51 @@
       endif
     endfor
   endif
-
 -%}
 
 {%- if show_badges -%}
   <div class="badges">
     {%- if is_sale == true -%}
-      <span class="badge sale" style="
-        --text-color: {{ settings.badge_sale_foreground }};
-        --background-color: {{ settings.badge_sale_background }};
-        ">
+      <span
+        class="badge sale"
+        style="
+          --text-color: {{ settings.badge_sale_foreground }};
+          --background-color: {{ settings.badge_sale_background }};
+        "
+      >
         {{ 'products.product.badges.on_sale' | t }}
       </span>
     {%- endif -%}
     {%- if is_preorder == true -%}
-      <span class="badge preorder" style="
-        --text-color: {{ settings.badge_preorder_foreground }};
-        --background-color: {{ settings.badge_preorder_background }};
-        ">
+      <span
+        class="badge preorder"
+        style="
+          --text-color: {{ settings.badge_preorder_foreground }};
+          --background-color: {{ settings.badge_preorder_background }};
+        "
+      >
         {{ 'products.product.badges.preorder' | t }}
       </span>
     {%- endif -%}
     {%- if is_new == true -%}
-      <span class="badge new" style="
-        --text-color: {{ settings.badge_new_foreground }};
-        --background-color: {{ settings.badge_new_background }};
-        ">
+      <span
+        class="badge new"
+        style="
+          --text-color: {{ settings.badge_new_foreground }};
+          --background-color: #004C97;
+        "
+      >
         {{ 'products.product.badges.new' | t }}
       </span>
     {%- endif -%}
     {%- if is_sold_out == true -%}
-      <span class="badge soldout" style="
-        --text-color: {{ settings.badge_sold_out_foreground }};
-        --background-color: {{ settings.badge_sold_out_background }};
-        ">
+      <span
+        class="badge soldout"
+        style="
+          --text-color: {{ settings.badge_sold_out_foreground }};
+          --background-color: {{ settings.badge_sold_out_background }};
+        "
+      >
         {{ 'products.product.badges.soldout' | t }}
       </span>
     {%- endif -%}

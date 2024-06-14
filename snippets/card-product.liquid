@@ -37,9 +37,14 @@
     endcapture
   endif
  -%}
-
+<!-- Added css file from Akeron -->
+{{ 'component-card-queries.css' | asset_url | stylesheet_tag }}
 {%- if product and product != empty -%}
   <div class="card card--product card--{{ card_type }} {% if card_layout_class != blank %} {{ card_layout_class }}{% endif %}{% if secondary_image %} on-hover{% endif %} {{ class }}">
+    <!-- Akeron added Sale label if compared-price exists -->
+    {%- if product.compare_at_price -%}
+       <label>Sale</label>
+     {%- endif -%}
     <a href="{{ product.url }}" class="card-media p-{{ settings.image_padding }}">
       {%- if secondary_image -%}
         <div class="card-hover-images">{{ card_images }}</div>
@@ -52,7 +57,7 @@
       </div>
     </a>
 
-    <div class="card-body {{ text_align }}">
+    <div class="card-body voucher-body {{ text_align }}">
       {% if card_layout_class != blank %}
         {{ product_badges }}
       {% endif %}

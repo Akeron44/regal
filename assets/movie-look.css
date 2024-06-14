@@ -43,11 +43,11 @@
   padding-top: 53px;
 }
 
-
 .labels {
   position: absolute;
   top: 1.6rem;
   right: 33px;
+
 }
 
 .card-titles {
@@ -106,7 +106,6 @@ div[id*="movie_look"] .section-header h2 {
   display: flex;
   justify-content: center;
   color: white;
-
 }
 
 .New,
@@ -125,7 +124,6 @@ div[id*="movie_look"] .section-header h2 {
 
 
 @media (min-width: 1920px) {
-
   .movie-container > * {
     gap: 9.2rem;
   }
@@ -200,4 +198,3 @@ div[id*="movie_look"] .section-header h2 {
     padding: 1px 10px !important;
   }
 
-}

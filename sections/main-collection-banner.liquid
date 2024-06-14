@@ -4,9 +4,10 @@
     assign show_image = true
   endif
 -%}
-
+<!-- Added css file from Akeron -->
+{{ 'banner-style.css' | asset_url | stylesheet_tag }}
 <header
-  class="container sm-down-edge-to-edge pt pb sm-pt sm-pb color-{{ section.settings.color_scheme }}{% if section.settings.center_text %} text-align-center{% endif %}"
+  class="voucher-image-container container sm-down-edge-to-edge pt pb sm-pt sm-pb color-{{ section.settings.color_scheme }}{% if section.settings.center_text %} text-align-center{% endif %}"
   style="
     --pt: {{ section.settings.padding_top | append: 'px' }};
     --pb: {{ section.settings.padding_bottom | append: 'px' }};
@@ -21,12 +22,7 @@
     </div>
     {% endif %}
     <div class="collection-title pt-24 pb-24 sm-down-p-page col-12{% if show_image and section.settings.image_layout == 'show next_to' and section.settings.center_text == false %} col-sm-6{% endif %}">
-      <h1 class="heading">{{ collection.title }}</h1>
-      {%- unless collection.description == blank -%}  
-        <div class="mt-12 rte description">
-          {{ collection.description }}
-        </div>
-      {%- endunless -%}
+      <h1 class="heading banner-title">{{ collection.title }}</h1>
     </div>
   </div>
   {% if show_image and section.settings.image_layout == 'show as_bg' %}
