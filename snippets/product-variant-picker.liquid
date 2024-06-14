@@ -49,6 +49,7 @@
               product_form_id: product_form_id,
               option: option,
               picker_type: 'button' -%}
+            
           </fieldset>
         {%- endfor -%}
         <script type='application/json'>
@@ -81,18 +82,18 @@
           </legend>
           <noscript>
             <legend class='form__label'>{{ option.name }}</legend>
-          </noscript>
+          </noscript> 
           {%- render 'product-variant-options',
             product: product,
             product_form_id: product_form_id,
             option: option,
             picker_type: picker_type -%}
         </fieldset>
-      {%- endfor -%}
+      {%- endfor -%} 
       <script type='application/json'>
         {{ product.variants | json }}
       </script>
-    </variant-radios>
+    </variant-radios>   
 
   {%- else -%}
     <variant-selects 

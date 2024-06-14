@@ -1,5 +1,4 @@
 {%- liquid
-
   # ** PARAMETERS **
   # option          =>  REQUIRED | option object
   # product_form_id =>  REQUIRED | string | used to mach labels and inputs correctly
@@ -26,7 +25,6 @@
   {%- liquid
     assign option_disabled = true
     for option1_name in variants_option1_arr
-
       case option.position
         when 1
           if variants_option1_arr[forloop.index0] == value and variants_available_arr[forloop.index0]
@@ -49,7 +47,7 @@
       if color_swatches
         assign downcased_color = value | handleize
 
-         comment
+        comment
           Downcase PNG attempt
         endcomment
         assign url = value | handleize | append: '.png'
@@ -71,43 +69,55 @@
       endif
     -%}
 
-    <input
-      type='radio'
-      id='{{ product_form_id }}-{{ option.position }}-{{ forloop.index0 }}'
-      name='{{ option.name }}'
-      value='{{ value | escape }}'
-      form='{{ product_form_id }}'
-      {% if option.selected_value == value %}
-        checked
+    {% assign file_url_exists = false %}
+    {% for variant in product.variants %}
+      {% if variant.image %}
+        {% assign file_url_exists = true %}
       {% endif %}
-      {% if option_disabled %}
-        class="disabled"
-      {% endif %}
-    >
-    <label
-      for='{{ product_form_id }}-{{ option.position }}-{{ forloop.index0 }}'
-      {% if color_swatches %}
-        style='--color: {{ downcased_color }};'
-      {% endif %}
-      class='{% if color_swatches %}swatch {% endif %}{% if file_url %}has-image{% endif %}'>
-      {%- unless color_swatches -%}
-        {{- value -}}
-      {%- else -%}
+    {% endfor %}
 
-        {%- if file_url -%}
-          {% # theme-check-disable %}
-          <img src='{{ file_url }}' alt='{{ value }}' class="color" width='16' height='16' loading='lazy' decoding='async'>
-          {% # theme-check-enable %}
+    {%- if file_url_exists -%}
+      <div class="product_thumbnails">
+        {% for variant in product.variants %}
+          {% if variant.image %}
+            <a href="{{ variant.url }}">
+              <div >
+                {{ variant.image | image_url: width: 80, height:80 | image_tag }}
+              </div>
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {%- else -%}
+      <input
+        type='radio'
+        id='{{ product_form_id }}-{{ option.position }}-{{ forloop.index0 }}'
+        name='{{ option.name }}'
+        value='{{ value | escape }}'
+        form='{{ product_form_id }}'
+        {% if option.selected_value == value %}
+          checked
+        {% endif %}
+        {% if option_disabled %}
+          class="disabled"
+        {% endif %}
+      >
+      <label
+        for='{{ product_form_id }}-{{ option.position }}-{{ forloop.index0 }}'
+        {% if color_swatches %}
+          style='--color: {{ downcased_color }};'
+        {% endif %}
+        class='{% if color_swatches %}swatch {% endif %}{% if file_url %}has-image{% endif %}'>
+        {%- unless color_swatches -%}
+          {{- value -}}
         {%- else -%}
           <span class="color"></span>
-        {%- endif -%}
-
-        <span class='visually-hidden'>
-          {{- value -}}
-        </span>
-      {%- endunless -%}
-    </label>
-
+          <span class='visually-hidden'>
+            {{- value -}}
+          </span>
+        {%- endunless -%}
+      </label>
+    {%- endif -%}
   {%- elsif picker_type == 'dropdown' -%}
     <option
       value="{{ value | escape }}"
